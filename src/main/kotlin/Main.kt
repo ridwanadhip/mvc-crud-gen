@@ -1,4 +1,3 @@
-import java.sql.DriverManager
 import java.util.*
 
 fun main(args: Array<String>) {
@@ -21,11 +20,5 @@ fun main(args: Array<String>) {
         Scanner(System.`in`).use { it.nextLine() }
     }
     
-    val conn = try {
-        DriverManager.registerDriver(org.postgresql.Driver())
-        DriverManager.getConnection(url, username, password)
-    } catch (e: Exception) {
-        println(Constant.Messages.ConnectionError)
-        return
-    }
+    App(url, username, password).start()
 }
