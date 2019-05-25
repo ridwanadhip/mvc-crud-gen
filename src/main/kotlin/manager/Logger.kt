@@ -3,5 +3,5 @@ package manager
 import org.apache.logging.log4j.LogManager
 
 object Logger {
-    val shared = LogManager.getLogger(Logger.javaClass)
+    val shared: org.apache.logging.log4j.Logger = LogManager.getLogger(this.javaClass)
 }
